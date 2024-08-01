@@ -5,5 +5,4 @@ Rails.application.routes.draw do
   #get 'homes/top'はデフォルトこれは消してroot toを使う
   get 'homes/about' => 'homes#about', as: 'about'
   #名前付きルートをaboutに設定
-  
 end
