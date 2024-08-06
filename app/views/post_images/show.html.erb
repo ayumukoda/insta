@@ -1,0 +1,8 @@
+<div>
+    <%= image_tag @post_image.get_image %>
+    <p>shop name:<%= @post_image.shop_name %></p>
+    <p>explanation:<%= @post_image.caption %></p>
+    <p>user:<%= image_tag 'sample-author1.jpg' %></p>
+    <p>user name:<%= @post_image.user.name %></p>
+    <p>posted day:<%= @post_image.created_at.strftime('%Y/%m/%d') %></p>
+</div>
