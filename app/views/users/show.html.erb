@@ -2,6 +2,7 @@
 <div>
     <h3><%= @user.name %></h3>
     <%= image_tag @user.get_profile_image(100,100) %>
+    <p><%= link_to "プロフィール編集", edit_user_path(@user) %></p>
 </div>
 
 <!--ユーザーの投稿一覧-->
@@ -11,7 +12,7 @@
         <%= image_tag post_image.get_image %>
     <% end %>
     <p>user image:<%= image_tag post_image.user.get_profile_image(100,100) %></p>
-    <p>shop name<%= post_image.shop_name %></p>
+    <p>shop name:<%= post_image.shop_name %></p>
     <p>explanation:<%= post_image.caption %></p>
     <p>user name:<%= post_image.user.name %></p>
 </div>
