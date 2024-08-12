@@ -5,11 +5,10 @@ Rails.application.routes.draw do
   #get 'homes/top'はデフォルトこれは消してroot toを使う
   get 'homes/about' => 'homes#about', as: 'about'
   #名前付きルートをaboutに設定
-  resources :users, only: [:show, :edit]
-  #get 'users/show'
-  #get 'users/edit'
-  resources :post_images, only: [:new, :create, :index, :show, :destroy]
-  #get 'post_images/new'
-  #get 'post_images/index'
-  #get 'post_images/show'
+  resources :post_images, only: [:new, :create, :index, :show, :destroy] do
+    resources :post_comments, only: [:create]
+  end
+  #コメントは投稿画像に結び付くのでこのような親子関係にする(ネストするという)
+  resources :users, only: [:show, :edit, :update]
+ 
 end

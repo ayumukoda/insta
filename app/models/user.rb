@@ -6,6 +6,8 @@ class User < ApplicationRecord
          
   has_many :post_images, dependent: :destroy
   #1:Nの関係　Userモデルは１の側（ポストに対してユーザーは一人のみ
+  has_many :post_comments, dependent: :destroy
+  #userモデルとpost_commentモデルを関連付ける
   
   has_one_attached :profile_image
   #profile_imageという名前でacttivestorageでプロフィール画像を保存できるように設定

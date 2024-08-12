@@ -5,10 +5,10 @@
     <% end %>
     <!--link_toでリンク先を指定/post_image/:idでリンクができる-->
     <!--doからendがaタグで囲まれた状態になる結果aタグに囲まれたimgタグになる-->
-    <p>user:<%= image_tag 'sample-author1.jpg' %></p>
-    <p>shop name:<%= post_image.shop_name %></p>
-    <p>explanation:<%= post_image.caption %></p>
-    <p>user name:<%= post_image.user.name %></p>
-    <!---->
+    <p>投稿ユーザー画像:<%= image_tag post_image.user.get_profile_image(100,100) %></p>
+    <p>ショップ名:<%= post_image.shop_name %></p>
+    <p>説明:<%= post_image.caption %></p>
+    <p>ユーザーネーム:<%= post_image.user.name %></p>
+    <p><%= link_to "#{post_image.post_comments.count} コメント", post_image_path(post_image.id) %></p>
 </div>
 <% end %>
