@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+    before_action :authenticate_user!, except: [:top]
     #ログインやユーザ登録の前にconfigure_permitted_parameter（パラメーターを取得）が使われる
     before_action :configure_permitted_parameters, if: :devise_controller?
     

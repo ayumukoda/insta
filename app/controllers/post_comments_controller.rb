@@ -9,6 +9,7 @@ class PostCommentsController < ApplicationController
         comment.post_image_id = post_image.id
         comment.save
         redirect_to post_image_path(post_image)
+        #post_images/:idのページに飛ぶように設定
     end
     
     def destroy
